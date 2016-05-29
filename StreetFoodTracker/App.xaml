@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="StreetFoodTracker.App">
+<!---  <Application.Resources>
+    <ResourceDictionary>
+      <Style x:Key="titleLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="Green" />
+      </Style>
+      
+      <Color x:Key="pageBackground">#4aaaa5</Color>
+
+      <Color x:Key="menuBackground">#7accc8</Color>
+
+      <Color x:Key="containerBackground">#35404f</Color>
+
+      <Color x:Key="appTextColor">White</Color>
+
+      <Color x:Key="appAccentColor">#e45f56</Color>
+
+      <OnPlatform x:Key="appButtonAccentColor" x:TypeArguments="Color"
+	      			iOS="#e45f56"
+	      			Android="Black"
+	      			WinPhone="Accent" />
+
+    </ResourceDictionary>
+  </Application.Resources>-->
+</Application>
