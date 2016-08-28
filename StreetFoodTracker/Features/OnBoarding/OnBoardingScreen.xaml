@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:CarouselPageWithPager xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:pages="clr-namespace:StreetFoodTracker.CustomElements;assembly=StreetFoodTracker" 
+SelectedPagerItemColor="White" 
+PagerPadding="0, 0, 0 ,60" 
+PagerYAlign="End" 
+x:Class="StreetFoodTracker.Features.OnBoarding.OnBoardingScreen">
+	<ContentPage>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image Grid.Row="0" Source="portrait-onboarding-1.jpg" Aspect="Fill" />
+		</Grid>
+	</ContentPage>
+	<ContentPage>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image Grid.Row="0" Source="portrait-onboarding-2.jpg" Aspect="Fill" />
+		</Grid>
+	</ContentPage>
+	<ContentPage>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image Grid.Row="0" Source="portrait-onboarding-3.jpg" Aspect="Fill" />
+			<Button Grid.Row="1" Command="{Binding GoToSignUpCommand}" BorderRadius="0" BackgroundColor="#DD6600" Text="Get Started" TextColor="White" HorizontalOptions="FillAndExpand" />
+		</Grid>
+	</ContentPage>
+	<!---
+  <ContentPage BackgroundImage="portrait-onboarding-3.jpg">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="70"/>
+        <RowDefinition Height="30"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+
+      <StackLayout Grid.Row="0" Orientation="Vertical" Padding="0, 100, 0 ,0" Spacing="2">
+        <Image Source="placeholder.png" WidthRequest="200" HeightRequest="200" Aspect="AspectFit" />
+        <Label Text="This is a super duper function" HorizontalOptions="CenterAndExpand"/>
+      </StackLayout>
+
+      <Label Text="Inicia Sesion con" HorizontalOptions="CenterAndExpand" Grid.Row="1"/>
+
+      <StackLayout Grid.Row="2" Orientation="Horizontal">
+        <BoxView Color="Blue" HorizontalOptions="FillAndExpand" />
+        <BoxView Color="Lime" HorizontalOptions="FillAndExpand"/>
+      </StackLayout>
+
+      <Label Grid.Row="3" Text="Crear tu cuenta con Donan.do" HorizontalOptions="CenterAndExpand"/>
+    </Grid>
+
+  </ContentPage>
+  -->
+</pages:CarouselPageWithPager>

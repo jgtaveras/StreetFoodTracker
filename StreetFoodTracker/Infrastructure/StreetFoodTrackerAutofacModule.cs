@@ -1,5 +1,8 @@
 ﻿using System;
 using Autofac;
+using StreetFoodTracker.Features.Home;
+using StreetFoodTracker.Features.OnBoarding;
+using StreetFoodTracker.Features.SignUp;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -13,14 +16,16 @@ namespace StreetFoodTracker.Infrastructure
 
 		void LoadViews (ContainerBuilder builder)
 		{
-			builder.RegisterType<Main.HomeScreen> ().SingleInstance ();
-			builder.RegisterType<OnBoarding.OnBoardingScreen> ().SingleInstance ();
+			builder.RegisterType<HomeScreen> ().SingleInstance ();
+			builder.RegisterType<OnBoardingScreen> ().SingleInstance ();
+			builder.RegisterType<SignUpScreen> ().SingleInstance ();
 		}
 
 		void LoadViewModels (ContainerBuilder builder)
 		{
-			builder.RegisterType<Main.HomeScreenViewModel> ().SingleInstance ();
-			builder.RegisterType<OnBoarding.OnBoardingScreenViewModel> ().SingleInstance ();		
+			builder.RegisterType<HomeScreenViewModel> ().SingleInstance ();
+			builder.RegisterType<OnBoardingViewModel> ().SingleInstance ();
+			builder.RegisterType<SignUpViewModel> ().SingleInstance ();
 		}
 	}
 }

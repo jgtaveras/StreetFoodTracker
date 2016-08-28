@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:localConverters="clr-namespace:StreetFoodTracker.Converters;assembly=StreetFoodTracker"
 x:Class="StreetFoodTracker.App">
-<!---  <Application.Resources>
+  <Application.Resources>
     <ResourceDictionary>
       <Style x:Key="titleLabel" TargetType="Label">
         <Setter Property="TextColor" Value="Green" />
@@ -23,6 +24,8 @@ x:Class="StreetFoodTracker.App">
 	      			Android="Black"
 	      			WinPhone="Accent" />
 
+	  <localConverters:BoolToImageConverter x:Key="boolToImage" />
+
     </ResourceDictionary>
-  </Application.Resources>-->
+  </Application.Resources>
 </Application>

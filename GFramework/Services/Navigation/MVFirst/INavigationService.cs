@@ -12,10 +12,10 @@ namespace GFramework.Services.Navigation.MVFirst
 
 		Task PopToRootAsync();
 
-		Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> setStateAction = null) 
+		Task<TViewModel> PushAsync<TViewModel> (Action<TViewModel> setStateAction = null, bool resetNavigationStack = false) 
 			where TViewModel : class, IViewModel;
 
-		Task<TViewModel> PushAsync<TViewModel>(TViewModel viewModel) 
+		Task<TViewModel> PushAsync<TViewModel>(TViewModel viewModel, bool resetNavigationStack = false) 
 			where TViewModel : class, IViewModel;
 
 		Task<TViewModel> PushModalAsync<TViewModel>(Action<TViewModel> setStateAction = null) 

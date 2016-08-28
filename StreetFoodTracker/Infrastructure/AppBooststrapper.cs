@@ -2,8 +2,10 @@
 using GFramework.Bootstrapping;
 using Autofac;
 using GFramework.Factory;
-using StreetFoodTracker.Main;
-
+using StreetFoodTracker.Features.Home;
+using StreetFoodTracker.Features.OnBoarding;
+using StreetFoodTracker.Features.SignUp;
+using Xamarin.Forms;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -14,23 +16,26 @@ namespace StreetFoodTracker.Infrastructure
 		protected override void RegisterViews (GFramework.Factory.IViewFactory viewFactory)
 		{
 			viewFactory.Register<HomeScreenViewModel, HomeScreen> ();
-			viewFactory.Register<OnBoarding.OnBoardingScreenViewModel, OnBoarding.OnBoardingScreen> ();
+			viewFactory.Register<OnBoardingViewModel, OnBoardingScreen> ();
+			viewFactory.Register<SignUpViewModel, SignUpScreen> ();
 		}
 
-		protected override void ConfigureApplication (IContainer container, Xamarin.Forms.Application app)
-		{
-			var viewFactory = container.Resolve<IViewFactory> ();
-			var mainPage = viewFactory.Resolve<HomeScreenViewModel> ();
 
-			app.MainPage = mainPage;
-
-		}
 
 		protected override void ConfigureContainer (ContainerBuilder builder)
 		{
 			base.ConfigureContainer (builder);
 
 			builder.RegisterModule<StreetFoodTrackerAutofacModule> ();
+		}
+
+		protected override void ConfigureApplication (IContainer container, Xamarin.Forms.Application app)
+		{
+			var viewFactory = container.Resolve<IViewFactory> ();
+			var mainPage = viewFactory.Resolve<SignUpViewModel> ();
+
+			app.MainPage = new NavigationPage(mainPage);
+
 		}
 
 		#endregion

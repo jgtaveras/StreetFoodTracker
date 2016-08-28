@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace StreetFoodTracker.Main
+namespace StreetFoodTracker.Features.Home
 {
 	public partial class HomeScreen : ContentPage
 	{

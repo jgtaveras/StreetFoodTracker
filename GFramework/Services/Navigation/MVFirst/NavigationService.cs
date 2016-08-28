@@ -5,6 +5,7 @@ using GFramework.Factory;
 using GFramework.Services.Dialog;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace GFramework.Services.Navigation.MVFirst
 {
@@ -41,20 +42,30 @@ namespace GFramework.Services.Navigation.MVFirst
 			await Navigation.PopToRootAsync();
 		}
 
-		public async Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> setStateAction = null) 
+		public async Task<TViewModel> PushAsync<TViewModel> (Action<TViewModel> setStateAction = null, bool resetNavigationStack = false) 
 			where TViewModel : class, IViewModel
 		{
 			TViewModel viewModel;
 			var view = _viewFactory.Resolve<TViewModel>(out viewModel, setStateAction);
+
 			await Navigation.PushAsync(view);
+
+			if (resetNavigationStack) {
+				ResetNavigationStack (view);;
+			}
+
 			return viewModel;
 		}
 
-		public async Task<TViewModel> PushAsync<TViewModel>(TViewModel viewModel) 
+		public async Task<TViewModel> PushAsync<TViewModel>(TViewModel viewModel, bool resetNavigationStack = false) 
 			where TViewModel : class, IViewModel
 		{
 			var view = _viewFactory.Resolve(viewModel);
 			await Navigation.PushAsync(view);
+
+			if (resetNavigationStack) {
+				ResetNavigationStack (view);
+			}
 			return viewModel;
 		}
 
@@ -64,6 +75,8 @@ namespace GFramework.Services.Navigation.MVFirst
 			TViewModel viewModel;
 			var view = _viewFactory.Resolve<TViewModel>(out viewModel, setStateAction);
 			await Navigation.PushModalAsync(view);
+
+
 			return viewModel;
 		}
 
@@ -73,6 +86,16 @@ namespace GFramework.Services.Navigation.MVFirst
 			var view = _viewFactory.Resolve(viewModel);
 			await Navigation.PushModalAsync(view);
 			return viewModel;
+		}
+
+
+		private void ResetNavigationStack (Page currentPage) { 
+			var existingPages = Navigation.NavigationStack
+			                              .Where(p => !p.Equals(currentPage))
+			                              .ToList ();
+			foreach (var page in existingPages) {
+				Navigation.RemovePage (page); 
+			} 
 		}
 	}
 }

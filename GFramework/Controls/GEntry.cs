@@ -28,7 +28,6 @@ namespace GFramework.Controls
             BindableProperty.Create<GEntry, bool>(
                 p => p.HasAutoCorrect, true);
 
-
         public BorderStyles BorderStyle
         {
             get { return (BorderStyles)GetValue(BorderStyleProperty); }
@@ -46,5 +45,7 @@ namespace GFramework.Controls
             get { return (bool)GetValue(HasAutoCorrectProperty); }
             set { SetValue(HasAutoCorrectProperty, value); }
         }
+
+	
     }
 }
