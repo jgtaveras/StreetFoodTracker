@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using GFramework.Factory;
+using System.Collections.ObjectModel;
 
 namespace StreetFoodTracker.Features.OnBoarding
 {
@@ -15,6 +16,7 @@ namespace StreetFoodTracker.Features.OnBoarding
 
 
 		public ICommand GoToSignUpCommand{ get; set; }
+		public ObservableCollection<OnBoardingContent> OnBoardingContentList { get; set; }
 
 		public OnBoardingViewModel (INavigationService navigationService, IViewFactory viewFactory)
 		{
@@ -22,15 +24,27 @@ namespace StreetFoodTracker.Features.OnBoarding
 			this.navigationService = navigationService;
 
 			GoToSignUpCommand = new Command (DoGoToSignUpCommand);
+			BuildOnBoardingPages ();
 		}
 
-		private void DoGoToSignUpCommand ()
+		private async void DoGoToSignUpCommand ()
 		{
-			var view = viewFactory.Resolve<SignUp.SignUpViewModel> ();
+			Helpers.Settings.HasSeenOnBoarding = true;
+			await navigationService.PushAsync<SignUp.SignUpViewModel> (resetNavigationStack: true);
+		}
 
-			Application.Current.MainPage = new NavigationPage (view);
+		private void BuildOnBoardingPages () {
+			OnBoardingContentList = new ObservableCollection<OnBoardingContent> ();
 
-			//await navigationService.PushAsync<SignUp.SignUpViewModel> ();
+			OnBoardingContentList.Add (new OnBoarding.OnBoardingContent { 
+				BackGroundImageName = "portrait_onboarding_2"
+			});
+
+			OnBoardingContentList.Add (new OnBoarding.OnBoardingContent {
+				BackGroundImageName = "portrait_onboarding_3",
+				IsSkipButtonPresent = true
+			});
+
 		}
 	}
 }

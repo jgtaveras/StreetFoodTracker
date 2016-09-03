@@ -32,7 +32,14 @@ namespace StreetFoodTracker.Infrastructure
 		protected override void ConfigureApplication (IContainer container, Xamarin.Forms.Application app)
 		{
 			var viewFactory = container.Resolve<IViewFactory> ();
-			var mainPage = viewFactory.Resolve<SignUpViewModel> ();
+
+			Page mainPage = null;
+
+			if (Helpers.Settings.HasSeenOnBoarding) {
+				mainPage = viewFactory.Resolve<SignUpViewModel> ();
+			} else {
+				mainPage = viewFactory.Resolve<OnBoardingViewModel> ();
+			}
 
 			app.MainPage = new NavigationPage(mainPage);
 

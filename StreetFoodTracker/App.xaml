@@ -24,8 +24,7 @@ x:Class="StreetFoodTracker.App">
 	      			Android="Black"
 	      			WinPhone="Accent" />
 
-	  <localConverters:BoolToImageConverter x:Key="boolToImage" />
-
+	
     </ResourceDictionary>
   </Application.Resources>
 </Application>

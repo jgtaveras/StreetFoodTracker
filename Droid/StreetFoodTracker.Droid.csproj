@@ -89,6 +89,15 @@
     <Reference Include="Xamarin.Forms.Platform">
       <HintPath>..\packages\Xamarin.Forms.2.3.1.114\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.1.0\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.1.0\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\MonoAndroid10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StreetFoodTracker\StreetFoodTracker.csproj">
@@ -104,6 +113,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -136,6 +146,16 @@
     <AndroidResource Include="Resources\drawable-xhdpi\failValidation.png" />
     <AndroidResource Include="Resources\drawable-hdpi\failValidation.png" />
     <AndroidResource Include="Resources\drawable\failValidation.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\portrait_onboarding_3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\portrait_onboarding_3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\portrait_onboarding_3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\portrait_onboarding_3.png" />
+    <AndroidResource Include="Resources\drawable\portrait_onboarding_3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\portrait_onboarding_2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\portrait_onboarding_2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\portrait_onboarding_2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\portrait_onboarding_2.png" />
+    <AndroidResource Include="Resources\drawable\portrait_onboarding_2.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\facebook_icon.png" />
