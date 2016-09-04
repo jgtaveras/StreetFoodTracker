@@ -35,11 +35,11 @@ namespace StreetFoodTracker.Infrastructure
 
 			Page mainPage = null;
 
-			if (Helpers.Settings.HasSeenOnBoarding) {
-				mainPage = viewFactory.Resolve<SignUpViewModel> ();
-			} else {
+			//if (Helpers.Settings.HasSeenOnBoarding) {
+			//	mainPage = viewFactory.Resolve<SignUpViewModel> ();
+			//} else {
 				mainPage = viewFactory.Resolve<OnBoardingViewModel> ();
-			}
+			//}
 
 			app.MainPage = new NavigationPage(mainPage);
 
