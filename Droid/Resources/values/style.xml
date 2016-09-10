@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style name="SFTTheme.Base" parent="Theme.AppCompact.Light">
+	</style>
+	<style name="SFTTheme" parent="SFTTheme.Base">
+	</style>
+	<style name="SFTTheme.Splash" parent="SFTTheme">
+		<item name="android:windowBackground">@drawable/splash_screen</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+</resources>

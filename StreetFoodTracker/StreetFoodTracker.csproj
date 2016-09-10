@@ -116,5 +116,6 @@
     <Folder Include="Converters\" />
     <Folder Include="Infrastructure\Sqlite\" />
     <Folder Include="Features\OnBoarding\DotBottons\" />
+    <Folder Include="Features\Home\DrawerMenu\" />
   </ItemGroup>
 </Project>

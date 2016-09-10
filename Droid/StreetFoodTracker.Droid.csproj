@@ -114,6 +114,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -156,6 +157,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\portrait_onboarding_2.png" />
     <AndroidResource Include="Resources\drawable-hdpi\portrait_onboarding_2.png" />
     <AndroidResource Include="Resources\drawable\portrait_onboarding_2.png" />
+    <AndroidResource Include="Resources\drawable\layer-list.xml" />
+    <AndroidResource Include="Resources\values\style.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\facebook_icon.png" />
