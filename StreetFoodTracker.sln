@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFoodTracker.UITests", "UITests\StreetFoodTracker.UITests.csproj", "{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{C6F700EB-318C-4654-B0A8-E5C677A984BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFoodTracker.Droid", "Droid\StreetFoodTracker.Droid.csproj", "{1C3A53AF-E623-4193-8260-EEFA90671286}"
@@ -32,24 +30,6 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|Any CPU.ActiveCfg = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|Any CPU.Build.0 = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|iPhone.ActiveCfg = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|iPhone.Build.0 = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|iPhoneSimulator.ActiveCfg = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug - Droid|iPhoneSimulator.Build.0 = Debug - Droid|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|iPhone.Build.0 = Release|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B3CE5D15-0E17-48EE-8B7A-4769224D7A50}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{1C3A53AF-E623-4193-8260-EEFA90671286}.Debug - Droid|Any CPU.ActiveCfg = Debug - Droid|Any CPU
 		{1C3A53AF-E623-4193-8260-EEFA90671286}.Debug - Droid|Any CPU.Build.0 = Debug - Droid|Any CPU
 		{1C3A53AF-E623-4193-8260-EEFA90671286}.Debug - Droid|Any CPU.Deploy.0 = Debug - Droid|Any CPU

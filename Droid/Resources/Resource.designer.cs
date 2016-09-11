@@ -1091,32 +1091,32 @@ namespace StreetFoodTracker.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0048
-			public const int abc_background_cache_hint_selector_material_dark = 2131361864;
+			// aapt resource value: 0x7f0a004d
+			public const int abc_background_cache_hint_selector_material_dark = 2131361869;
 			
-			// aapt resource value: 0x7f0a0049
-			public const int abc_background_cache_hint_selector_material_light = 2131361865;
+			// aapt resource value: 0x7f0a004e
+			public const int abc_background_cache_hint_selector_material_light = 2131361870;
 			
-			// aapt resource value: 0x7f0a004a
-			public const int abc_color_highlight_material = 2131361866;
+			// aapt resource value: 0x7f0a004f
+			public const int abc_color_highlight_material = 2131361871;
 			
 			// aapt resource value: 0x7f0a000e
 			public const int abc_input_method_navigation_guard = 2131361806;
 			
-			// aapt resource value: 0x7f0a004b
-			public const int abc_primary_text_disable_only_material_dark = 2131361867;
+			// aapt resource value: 0x7f0a0050
+			public const int abc_primary_text_disable_only_material_dark = 2131361872;
 			
-			// aapt resource value: 0x7f0a004c
-			public const int abc_primary_text_disable_only_material_light = 2131361868;
+			// aapt resource value: 0x7f0a0051
+			public const int abc_primary_text_disable_only_material_light = 2131361873;
 			
-			// aapt resource value: 0x7f0a004d
-			public const int abc_primary_text_material_dark = 2131361869;
+			// aapt resource value: 0x7f0a0052
+			public const int abc_primary_text_material_dark = 2131361874;
 			
-			// aapt resource value: 0x7f0a004e
-			public const int abc_primary_text_material_light = 2131361870;
+			// aapt resource value: 0x7f0a0053
+			public const int abc_primary_text_material_light = 2131361875;
 			
-			// aapt resource value: 0x7f0a004f
-			public const int abc_search_url_text = 2131361871;
+			// aapt resource value: 0x7f0a0054
+			public const int abc_search_url_text = 2131361876;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int abc_search_url_text_normal = 2131361807;
@@ -1127,11 +1127,14 @@ namespace StreetFoodTracker.Droid
 			// aapt resource value: 0x7f0a0011
 			public const int abc_search_url_text_selected = 2131361809;
 			
-			// aapt resource value: 0x7f0a0050
-			public const int abc_secondary_text_material_dark = 2131361872;
+			// aapt resource value: 0x7f0a0055
+			public const int abc_secondary_text_material_dark = 2131361877;
 			
-			// aapt resource value: 0x7f0a0051
-			public const int abc_secondary_text_material_light = 2131361873;
+			// aapt resource value: 0x7f0a0056
+			public const int abc_secondary_text_material_light = 2131361878;
+			
+			// aapt resource value: 0x7f0a004a
+			public const int accent = 2131361866;
 			
 			// aapt resource value: 0x7f0a0012
 			public const int accent_material_dark = 2131361810;
@@ -1283,6 +1286,12 @@ namespace StreetFoodTracker.Droid
 			// aapt resource value: 0x7f0a0035
 			public const int material_grey_900 = 2131361845;
 			
+			// aapt resource value: 0x7f0a0048
+			public const int primary = 2131361864;
+			
+			// aapt resource value: 0x7f0a0049
+			public const int primaryDark = 2131361865;
+			
 			// aapt resource value: 0x7f0a0036
 			public const int primary_dark_material_dark = 2131361846;
 			
@@ -1325,23 +1334,29 @@ namespace StreetFoodTracker.Droid
 			// aapt resource value: 0x7f0a0043
 			public const int secondary_text_disabled_material_light = 2131361859;
 			
+			// aapt resource value: 0x7f0a004c
+			public const int splash_background = 2131361868;
+			
 			// aapt resource value: 0x7f0a0044
 			public const int switch_thumb_disabled_material_dark = 2131361860;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int switch_thumb_disabled_material_light = 2131361861;
 			
-			// aapt resource value: 0x7f0a0052
-			public const int switch_thumb_material_dark = 2131361874;
+			// aapt resource value: 0x7f0a0057
+			public const int switch_thumb_material_dark = 2131361879;
 			
-			// aapt resource value: 0x7f0a0053
-			public const int switch_thumb_material_light = 2131361875;
+			// aapt resource value: 0x7f0a0058
+			public const int switch_thumb_material_light = 2131361880;
 			
 			// aapt resource value: 0x7f0a0046
 			public const int switch_thumb_normal_material_dark = 2131361862;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int switch_thumb_normal_material_light = 2131361863;
+			
+			// aapt resource value: 0x7f0a004b
+			public const int window_background = 2131361867;
 			
 			static Color()
 			{
@@ -2206,8 +2221,8 @@ namespace StreetFoodTracker.Droid
 			// aapt resource value: 0x7f0200a2
 			public const int mr_ic_play_light = 2130837666;
 			
-			// aapt resource value: 0x7f0200a7
-			public const int notification_template_icon_bg = 2130837671;
+			// aapt resource value: 0x7f0200a8
+			public const int notification_template_icon_bg = 2130837672;
 			
 			// aapt resource value: 0x7f0200a3
 			public const int passValidation = 2130837667;
@@ -2220,6 +2235,9 @@ namespace StreetFoodTracker.Droid
 			
 			// aapt resource value: 0x7f0200a6
 			public const int sign_up_bg = 2130837670;
+			
+			// aapt resource value: 0x7f0200a7
+			public const int splash_screen = 2130837671;
 			
 			static Drawable()
 			{
@@ -3597,6 +3615,15 @@ namespace StreetFoodTracker.Droid
 			
 			// aapt resource value: 0x7f090069
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131296361;
+			
+			// aapt resource value: 0x7f090173
+			public const int SFTTheme = 2131296627;
+			
+			// aapt resource value: 0x7f090172
+			public const int SFTTheme_Base = 2131296626;
+			
+			// aapt resource value: 0x7f090174
+			public const int SFTTheme_Splash = 2131296628;
 			
 			// aapt resource value: 0x7f0900ea
 			public const int TextAppearance_AppCompat = 2131296490;
