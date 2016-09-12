@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace StreetFoodTracker.Features.Home
 {
-	public partial class HomeScreen : ContentPage
+	public partial class HomeScreen : MasterDetailPage
 	{
 		public HomeScreen ()
 		{

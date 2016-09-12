@@ -158,6 +158,9 @@
     <BundleResource Include="Resources\gplus_g_logo.png" />
     <BundleResource Include="Resources\gplus_g_logo%402x.png" />
     <BundleResource Include="Resources\gplus_g_logo%403x.png" />
+    <BundleResource Include="Resources\ic_menu_white_2x.png" />
+    <BundleResource Include="Resources\ic_menu_white_3x.png" />
+    <BundleResource Include="Resources\ic_menu_white.png" />
   </ItemGroup>
   <ItemGroup />
 </Project>

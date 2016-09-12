@@ -160,6 +160,13 @@
     <AndroidResource Include="Resources\values\style.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu_white.png" />
+    <AndroidResource Include="Resources\layout\tabs.axml" />
+    <AndroidResource Include="Resources\layout\toolbar.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\facebook_icon.png" />

@@ -41,7 +41,8 @@ namespace StreetFoodTracker.Infrastructure
 				mainPage = viewFactory.Resolve<OnBoardingViewModel> ();
 			//}
 
-			app.MainPage = new NavigationPage(mainPage);
+			//app.MainPage = new NavigationPage(mainPage);
+			app.MainPage = new HomeScreen ();
 
 		}
 
