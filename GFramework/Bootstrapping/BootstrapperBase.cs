@@ -40,7 +40,7 @@ namespace GFramework.Bootstrapping
 					: Application.Current.MainPage;
 
 				//Check if is navigation page
-				var navigationPage= page as IPageContainer<Page>;
+				var navigationPage = page as IPageContainer<Page>;
 
 				return navigationPage != null ? navigationPage.CurrentPage : page;
 			});

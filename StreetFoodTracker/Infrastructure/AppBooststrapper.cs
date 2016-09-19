@@ -6,6 +6,7 @@ using StreetFoodTracker.Features.Home;
 using StreetFoodTracker.Features.OnBoarding;
 using StreetFoodTracker.Features.SignUp;
 using Xamarin.Forms;
+using StreetFoodTracker.Features.Home.DrawerMenu;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -18,6 +19,7 @@ namespace StreetFoodTracker.Infrastructure
 			viewFactory.Register<HomeScreenViewModel, HomeScreen> ();
 			viewFactory.Register<OnBoardingViewModel, OnBoardingScreen> ();
 			viewFactory.Register<SignUpViewModel, SignUpScreen> ();
+			viewFactory.Register<DrawerMenuViewModel, DrawerMenuScreen> ();
 		}
 
 
@@ -35,14 +37,14 @@ namespace StreetFoodTracker.Infrastructure
 
 			Page mainPage = null;
 
-			//if (Helpers.Settings.HasSeenOnBoarding) {
-			//	mainPage = viewFactory.Resolve<SignUpViewModel> ();
-			//} else {
+			if (Helpers.Settings.HasSeenOnBoarding) {
+				mainPage = viewFactory.Resolve<SignUpViewModel> ();
+			} else {
 				mainPage = viewFactory.Resolve<OnBoardingViewModel> ();
-			//}
+			}
 
 			//app.MainPage = new NavigationPage(mainPage);
-			app.MainPage = new HomeScreen ();
+			app.MainPage = viewFactory.Resolve<HomeScreenViewModel> ();
 
 		}
 

@@ -7,9 +7,13 @@ namespace StreetFoodTracker.Features.Home.DrawerMenu
 {
 	public partial class DrawerMenuScreen : ContentPage
 	{
+
+		public ListView DrawerOptions { get { return drawerOptions;} }
+
 		public DrawerMenuScreen ()
 		{
 			InitializeComponent ();
+
 		}
 	}
 }
