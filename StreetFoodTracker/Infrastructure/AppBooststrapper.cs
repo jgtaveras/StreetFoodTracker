@@ -7,6 +7,7 @@ using StreetFoodTracker.Features.OnBoarding;
 using StreetFoodTracker.Features.SignUp;
 using Xamarin.Forms;
 using StreetFoodTracker.Features.Home.DrawerMenu;
+using StreetFoodTracker.Features.TempTest;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -20,6 +21,9 @@ namespace StreetFoodTracker.Infrastructure
 			viewFactory.Register<OnBoardingViewModel, OnBoardingScreen> ();
 			viewFactory.Register<SignUpViewModel, SignUpScreen> ();
 			viewFactory.Register<DrawerMenuViewModel, DrawerMenuScreen> ();
+
+			viewFactory.Register<SamplePage1ViewModel, SamplePage1> ();
+			viewFactory.Register<SamplePage2ViewModel, SamplePage2> ();
 		}
 
 

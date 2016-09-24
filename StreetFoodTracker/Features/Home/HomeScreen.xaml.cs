@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GFramework.Services.Navigation.MVFirst;
 using StreetFoodTracker.Features.Home.DrawerMenu;
+using StreetFoodTracker.Features.TempTest;
 using Xamarin.Forms;
 
 namespace StreetFoodTracker.Features.Home
@@ -25,10 +26,12 @@ namespace StreetFoodTracker.Features.Home
 			var item = e.SelectedItem as DrawerMenuItemViewModel;
 			if (item != null) {
 
-				var x = Detail as NavigationPage;
-				if (x != null) {
-					x.PushAsync (new TempTest.SamplePage1 ());
-				}
+				//var x = Detail as NavigationPage;
+				//if (x != null) {
+				//	x.PushAsync (new TempTest.SamplePage1 ());
+				//}
+
+				_navigationService.PushAsync<SamplePage2ViewModel> ();
 
 				IsPresented = false;
 			}
