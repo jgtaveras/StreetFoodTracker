@@ -5,7 +5,6 @@ using GFramework.Core;
 using GFramework.Factory;
 using GFramework.Services.Dialog;
 using GFramework.Services.Navigation.MVFirst;
-using StreetFoodTracker.Features.Home;
 using Xamarin.Forms;
 
 namespace StreetFoodTracker.Features.SignUp
@@ -73,7 +72,7 @@ namespace StreetFoodTracker.Features.SignUp
 			if (string.IsNullOrEmpty (_userEmail) || string.IsNullOrEmpty (_userPassword)) {
 				await _dialogService.DisplayAlert ("Sign Up Error", "Please complete all the fields", "Ok");
 			} else {
-				var mainScreen = _viewFactory.Resolve<HomeScreenViewModel> ();
+				var mainScreen = _viewFactory.Resolve<MainPage.MainPageViewModel> ();
 				Application.Current.MainPage = mainScreen;
 			}
 		}
