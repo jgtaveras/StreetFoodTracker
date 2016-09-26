@@ -7,6 +7,7 @@ namespace StreetFoodTracker.Features.FavoriteLocations
 	{
 		public FavoriteLocationsViewModel ()
 		{
+			Title = "Favorites";
 		}
 	}
 }

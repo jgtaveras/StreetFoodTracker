@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StreetFoodTracker.Features.FavoriteLocations.FavoriteLocationsScreen">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="StreetFoodTracker.Features.FavoriteLocations.FavoriteLocationsScreen"
+		Title="{Binding Title}"
+		Icon="{Binding Icon}">
 	<ContentPage.Content>
 		<Label Text="Favorite Locations" 
 			HorizontalOptions="CenterAndExpand" 

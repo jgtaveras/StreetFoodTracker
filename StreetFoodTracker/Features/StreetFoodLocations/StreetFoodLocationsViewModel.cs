@@ -7,6 +7,7 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 	{
 		public StreetFoodLocationsViewModel ()
 		{
+			Title = "Locations";
 		}
 	}
 }

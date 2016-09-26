@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using StreetFoodTracker.Features.MainPage;
 using StreetFoodTracker.Features.FavoriteLocations;
 using StreetFoodTracker.Features.StreetFoodLocations;
+using StreetFoodTracker.Features.AppInfo;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -22,6 +23,7 @@ namespace StreetFoodTracker.Infrastructure
 			viewFactory.Register<MainPageViewModel, MainPageScreen> ();
 			viewFactory.Register<FavoriteLocationsViewModel, FavoriteLocationsScreen> ();
 			viewFactory.Register<StreetFoodLocationsViewModel, StreetFoodLocationsListScreen> ();
+			viewFactory.Register<AboutViewModel, AboutScreen> ();
 		}
 
 
@@ -45,7 +47,8 @@ namespace StreetFoodTracker.Infrastructure
 				mainPage = viewFactory.Resolve<OnBoardingViewModel> ();
 			}
 
-			app.MainPage = viewFactory.Resolve<MainPageViewModel> ();
+			//app.MainPage = viewFactory.Resolve<MainPageViewModel> ();
+			app.MainPage = new MainScreenCS (viewFactory);
 
 		}
 

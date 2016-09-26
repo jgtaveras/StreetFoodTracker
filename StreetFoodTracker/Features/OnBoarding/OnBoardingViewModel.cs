@@ -23,11 +23,11 @@ namespace StreetFoodTracker.Features.OnBoarding
 			this.viewFactory = viewFactory;
 			this.navigationService = navigationService;
 
-			GoToSignUpCommand = new Command (DoGoToSignUpCommand);
+			GoToSignUpCommand = new Command (async () => { await DoGoToSignUpCommand ();});
 			BuildOnBoardingPages ();
 		}
 
-		private async void DoGoToSignUpCommand ()
+		private async Task DoGoToSignUpCommand ()
 		{
 			Helpers.Settings.HasSeenOnBoarding = true;
 			await navigationService.PushAsync<SignUp.SignUpViewModel> (resetNavigationStack: true);
