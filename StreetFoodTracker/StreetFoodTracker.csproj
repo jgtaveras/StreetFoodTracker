@@ -39,33 +39,42 @@
     </Compile>
     <Compile Include="Infrastructure\AppBooststrapper.cs" />
     <Compile Include="Infrastructure\StreetFoodTrackerAutofacModule.cs" />
-    <Compile Include="Features\OnBoarding\OnBoardingViewModel.cs" />
-    <Compile Include="Features\SignUp\SignUpScreen.xaml.cs">
+    <Compile Include="Pages\OnBoarding\OnBoardingViewModel.cs" />
+    <Compile Include="Pages\SignUp\SignUpScreen.xaml.cs">
       <DependentUpon>SignUpScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\SignUp\SignUpViewModel.cs" />
+    <Compile Include="Pages\SignUp\SignUpViewModel.cs" />
     <Compile Include="Converters\ValidationStatusToImageConverter.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Features\OnBoarding\OnBoardingScreen.xaml.cs">
+    <Compile Include="Pages\OnBoarding\OnBoardingScreen.xaml.cs">
       <DependentUpon>OnBoardingScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\OnBoarding\OnBoardingContent.cs" />
-    <Compile Include="Features\OnBoarding\DotBottons\DotBotton.cs" />
-    <Compile Include="Features\OnBoarding\DotBottons\DotButtonsControl.cs" />
-    <Compile Include="Features\StreetFoodLocations\StreetFoodLocationsListScreen.xaml.cs">
+    <Compile Include="Pages\OnBoarding\OnBoardingContent.cs" />
+    <Compile Include="Pages\OnBoarding\DotBottons\DotBotton.cs" />
+    <Compile Include="Pages\OnBoarding\DotBottons\DotButtonsControl.cs" />
+    <Compile Include="Pages\StreetFoodLocations\StreetFoodLocationsListScreen.xaml.cs">
       <DependentUpon>StreetFoodLocationsListScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\MainPage\MainPageViewModel.cs" />
-    <Compile Include="Features\FavoriteLocations\FavoriteLocationsScreen.xaml.cs">
+    <Compile Include="Pages\MainPage\MainPageViewModel.cs" />
+    <Compile Include="Pages\FavoriteLocations\FavoriteLocationsScreen.xaml.cs">
       <DependentUpon>FavoriteLocationsScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\FavoriteLocations\FavoriteLocationsViewModel.cs" />
-    <Compile Include="Features\StreetFoodLocations\StreetFoodLocationsViewModel.cs" />
-    <Compile Include="Features\AppInfo\AboutScreen.xaml.cs">
+    <Compile Include="Pages\FavoriteLocations\FavoriteLocationsViewModel.cs" />
+    <Compile Include="Pages\StreetFoodLocations\StreetFoodLocationsViewModel.cs" />
+    <Compile Include="Pages\AppInfo\AboutScreen.xaml.cs">
       <DependentUpon>AboutScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\AppInfo\AboutViewModel.cs" />
-    <Compile Include="Features\MainPage\MainScreenCS.cs" />
+    <Compile Include="Pages\AppInfo\AboutViewModel.cs" />
+    <Compile Include="Pages\MainPage\MainScreenCS.cs" />
+    <Compile Include="Pages\StreetFoodLocations\StreetFoodLocationItemViewModel.cs" />
+    <Compile Include="Pages\StreetFoodLocations\Cells\StreetFoodLocationViewCell.xaml.cs">
+      <DependentUpon>StreetFoodLocationViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StreetFoodLocationDetail\StreetFoodLocationDetailViewModel.cs" />
+    <Compile Include="Pages\StreetFoodLocationDetail\StreetFoodLocationDetailScreen.xaml.cs">
+      <DependentUpon>StreetFoodLocationDetailScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\StreetFoodLocation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -83,20 +92,32 @@
     <Reference Include="Xamarin.Forms.CarouselView">
       <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Settings.Abstractions">
       <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.1.8\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.1.8\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.1.8\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.152-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.152-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.152-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.3.3.152-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,35 +129,47 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>App.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\SignUp\SignUpScreen.xaml">
+    <EmbeddedResource Include="Pages\SignUp\SignUpScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>SignUpScreen.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\OnBoarding\OnBoardingScreen.xaml">
+    <EmbeddedResource Include="Pages\OnBoarding\OnBoardingScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>OnBoardingScreen.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\StreetFoodLocations\StreetFoodLocationsListScreen.xaml">
+    <EmbeddedResource Include="Pages\StreetFoodLocations\StreetFoodLocationsListScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>StreetFoodLocationsListScreen.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\FavoriteLocations\FavoriteLocationsScreen.xaml">
+    <EmbeddedResource Include="Pages\FavoriteLocations\FavoriteLocationsScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>FavoriteLocationsScreen.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\AppInfo\AboutScreen.xaml">
+    <EmbeddedResource Include="Pages\AppInfo\AboutScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>AboutScreen.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StreetFoodLocations\Cells\StreetFoodLocationViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>StreetFoodLocationViewCell.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StreetFoodLocationDetail\StreetFoodLocationDetailScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>StreetFoodLocationDetailScreen.xaml</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Infrastructure\Sqlite\" />
-    <Folder Include="Features\OnBoarding\DotBottons\" />
-    <Folder Include="Features\StreetFoodLocations\" />
-    <Folder Include="Features\MainPage\" />
-    <Folder Include="Features\FavoriteLocations\" />
-    <Folder Include="Features\AppInfo\" />
+    <Folder Include="Pages\OnBoarding\DotBottons\" />
+    <Folder Include="Pages\StreetFoodLocations\" />
+    <Folder Include="Pages\MainPage\" />
+    <Folder Include="Pages\FavoriteLocations\" />
+    <Folder Include="Pages\AppInfo\" />
+    <Folder Include="Pages\StreetFoodLocations\Cells\" />
+    <Folder Include="Pages\StreetFoodLocationDetail\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Models\" />
   </ItemGroup>
-  <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.152-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.152-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

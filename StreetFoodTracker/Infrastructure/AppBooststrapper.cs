@@ -9,6 +9,7 @@ using StreetFoodTracker.Features.MainPage;
 using StreetFoodTracker.Features.FavoriteLocations;
 using StreetFoodTracker.Features.StreetFoodLocations;
 using StreetFoodTracker.Features.AppInfo;
+using StreetFoodTracker.Features.StreetFoodLocationDetail;
 
 namespace StreetFoodTracker.Infrastructure
 {
@@ -20,9 +21,9 @@ namespace StreetFoodTracker.Infrastructure
 		{
 			viewFactory.Register<OnBoardingViewModel, OnBoardingScreen> ();
 			viewFactory.Register<SignUpViewModel, SignUpScreen> ();
-			viewFactory.Register<MainPageViewModel, MainPageScreen> ();
 			viewFactory.Register<FavoriteLocationsViewModel, FavoriteLocationsScreen> ();
 			viewFactory.Register<StreetFoodLocationsViewModel, StreetFoodLocationsListScreen> ();
+			viewFactory.Register<StreetFoodLocationDetailViewModel, StreetFoodLocationDetailScreen> ();
 			viewFactory.Register<AboutViewModel, AboutScreen> ();
 		}
 

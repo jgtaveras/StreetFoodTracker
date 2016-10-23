@@ -11,6 +11,7 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 		{
 			InitializeComponent ();
 		}
+
 	}
 }
 

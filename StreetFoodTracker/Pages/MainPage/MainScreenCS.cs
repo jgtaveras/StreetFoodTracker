@@ -19,14 +19,19 @@ namespace StreetFoodTracker.Features.MainPage
 		protected override void OnAppearing ()
 		{
 			var about = _viewFactory.Resolve<AboutViewModel> ();
+
 			var locations = _viewFactory.Resolve<StreetFoodLocationsViewModel> ();
+			var navLocations = new NavigationPage (locations);
+			navLocations.Title = locations.Title;
+			navLocations.Icon = locations.Icon;
+
 			var favorites = _viewFactory.Resolve<FavoriteLocationsViewModel> ();
 
 			Children.Add (favorites);
-			Children.Add (locations);
+			Children.Add (navLocations);
 			Children.Add (about);
 
-			SelectedItem = locations;
+			SelectedItem = navLocations;
 		}
 	}
 }

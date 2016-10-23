@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+		xmlns:controls="clr-namespace:GFramework.Controls;assembly=GFramework"
+    	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+		x:Class="StreetFoodTracker.Features.StreetFoodLocationDetail.StreetFoodLocationDetailScreen"
+		Title="{Binding Title}"
+		BackgroundColor="White">
+	<ScrollView>
+		<AbsoluteLayout>
+			<ffimageloading:CachedImage x:Name="locationCover" 
+					Aspect="AspectFill" 
+					Source="{Binding Location.CoverImageURL}" 
+					LoadingPlaceholder="loading_image.png"
+					ErrorPlaceholder="image_not_found.png"
+					AbsoluteLayout.LayoutFlags="All" 
+					AbsoluteLayout.LayoutBounds="0, 0, 1, 0.25">  
+			</ffimageloading:CachedImage>
+
+			<StackLayout 
+				BackgroundColor="Silver"
+				AbsoluteLayout.LayoutBounds="0, 0.20, 1, 0.20"
+				AbsoluteLayout.LayoutFlags="All"
+				Margin="5, 15, 5, 0">
+
+				<StackLayout HorizontalOptions="FillAndExpand"
+							BackgroundColor="Silver"
+							 Orientation="Horizontal">
+					<Label 
+						Text="{Binding Location.Name}" 
+						FontSize="17" 
+						FontAttributes="Bold" 
+						TextColor="Black" 
+						HorizontalTextAlignment="Start"/>
+					
+					<controls:GButton BorderRadius="10" 
+						BackgroundColor="#E9A100" 
+						TextColor="White"
+						FontAttributes="Bold"
+						HorizontalOptions="EndAndExpand"
+						VerticalOptions="Start"
+						HeightRequest="35"
+						Padding="10"
+						Text="Add To Favorites" />
+
+				</StackLayout>
+				<Label 
+					Text="{Binding Location.Name}" 
+					FontSize="15" 
+					TextColor="Black" 
+					HorizontalTextAlignment="Start"/>
+			</StackLayout>
+
+			
+			<maps:Map 
+					AbsoluteLayout.LayoutBounds="0, 0.65, 1, 0.15"
+					AbsoluteLayout.LayoutFlags="All"
+					x:Name="LocationMap"
+					HasZoomEnabled="false"
+					HasScrollEnabled="false"
+			        IsShowingUser="true"
+			        MapType="Street"/>
+
+
+			<Label Text="Menu" 
+					HorizontalTextAlignment="Center"
+					FontSize="24"
+					TextColor="Black"
+					BackgroundColor="Fuchsia"
+					FontAttributes="Bold"
+					AbsoluteLayout.LayoutBounds="0.5, 0.75, 1, 0.05"
+					AbsoluteLayout.LayoutFlags="All"/>
+
+		</AbsoluteLayout>
+	</ScrollView>
+</ContentPage>

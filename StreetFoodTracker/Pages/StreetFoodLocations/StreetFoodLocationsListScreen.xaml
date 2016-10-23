@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="StreetFoodTracker.Features.StreetFoodLocations.StreetFoodLocationsListScreen" 
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+		xmlns:b="clr-namespace:GFramework.Behaviors;assembly=GFramework"
+		xmlns:c="clr-namespace:GFramework.Converters;assembly=GFramework"
+		BackgroundColor="White" 
+		Title="{Binding Title}"
+		Icon="{Binding Icon}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<c:SelectedItemListViewCommandArgsConverter x:Key="SelectedItemConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ListView 
+			x:Name="locationsListView"
+			RowHeight="200"
+			SeparatorVisibility="None"
+			ItemsSource="{Binding Locations}"
+			IsPullToRefreshEnabled="true" 
+			RefreshCommand="{Binding GetLatestLocations}"
+			IsRefreshing="{Binding IsBusy}"
+			CachingStrategy="RecycleElement">
+		<ListView.Behaviors>
+			<b:EventToCommandBehavior 
+				EventName="ItemSelected" 
+				Command="{Binding NavigateToLocationDetail}"
+				Converter="{StaticResource SelectedItemConverter}"/>
+		</ListView.Behaviors>
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<ViewCell.ContextActions>
+						<MenuItem Text="Add To Favorites"></MenuItem>
+					</ViewCell.ContextActions>
+					<AbsoluteLayout>
+						<ffimageloading:CachedImage x:Name="locationCover" 
+								Aspect="AspectFill" 
+								Source="{Binding CoverImageURL}" 
+								LoadingPlaceholder="loading_image.png"
+								ErrorPlaceholder="image_not_found.png"
+								AbsoluteLayout.LayoutFlags="All" 
+								AbsoluteLayout.LayoutBounds="0, 0, 1, 1">  
+						</ffimageloading:CachedImage>
+						<BoxView x:Name="transparency"
+								Color="Black"
+								Opacity="0.55"
+								AbsoluteLayout.LayoutFlags="All" 
+								AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>  
+						
+						<Label 
+							Text="{Binding Name}" 
+							FontAttributes="Bold"
+							HorizontalTextAlignment="Center"
+							FontSize="30" 
+							TextColor="White"  
+							AbsoluteLayout.LayoutBounds ="0.5, 0.60, 1, 0.25" 
+							AbsoluteLayout.LayoutFlags ="All" />
+
+						<Label  
+							Text="Street food cuisine with elegance" 
+							HorizontalTextAlignment="Center"
+							HorizontalOptions="FillAndExpand"
+							FontSize="20" 
+							TextColor="White"
+							FontAttributes="Italic"
+							AbsoluteLayout.LayoutBounds ="0.5, 0.90, 1, 0.25" 
+							AbsoluteLayout.LayoutFlags ="All" />						
+					</AbsoluteLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

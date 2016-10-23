@@ -5,6 +5,7 @@ using StreetFoodTracker.Features.FavoriteLocations;
 using StreetFoodTracker.Features.MainPage;
 using StreetFoodTracker.Features.OnBoarding;
 using StreetFoodTracker.Features.SignUp;
+using StreetFoodTracker.Features.StreetFoodLocationDetail;
 using StreetFoodTracker.Features.StreetFoodLocations;
 
 namespace StreetFoodTracker.Infrastructure
@@ -19,12 +20,12 @@ namespace StreetFoodTracker.Infrastructure
 
 		void LoadViews (ContainerBuilder builder)
 		{
-			builder.RegisterType<MainPageScreen> ().SingleInstance ();
 			builder.RegisterType<OnBoardingScreen> ().SingleInstance ();
 			builder.RegisterType<SignUpScreen> ().SingleInstance ();
 			builder.RegisterType<StreetFoodLocationsListScreen> ().SingleInstance ();
 			builder.RegisterType<FavoriteLocationsScreen> ().SingleInstance ();
 			builder.RegisterType<AboutScreen> ().SingleInstance ();
+			builder.RegisterType<StreetFoodLocationDetailScreen> ().SingleInstance ();
 		}
 
 		void LoadViewModels (ContainerBuilder builder)
@@ -34,7 +35,9 @@ namespace StreetFoodTracker.Infrastructure
 			builder.RegisterType<SignUpViewModel> ().SingleInstance ();
 			builder.RegisterType<StreetFoodLocationsViewModel> ().SingleInstance ();
 			builder.RegisterType<FavoriteLocationsViewModel> ().SingleInstance ();
+			builder.RegisterType<StreetFoodLocationItemViewModel> ();
 			builder.RegisterType<AboutViewModel> ().SingleInstance ();
+			builder.RegisterType<StreetFoodLocationDetailViewModel> ();
 		}
 	}
 }
