@@ -17,7 +17,7 @@
 			x:Name="locationsListView"
 			RowHeight="200"
 			SeparatorVisibility="None"
-			ItemsSource="{Binding Locations}"
+			ItemsSource="{Binding LocationsList}"
 			IsPullToRefreshEnabled="true" 
 			RefreshCommand="{Binding GetLatestLocations}"
 			IsRefreshing="{Binding IsBusy}"

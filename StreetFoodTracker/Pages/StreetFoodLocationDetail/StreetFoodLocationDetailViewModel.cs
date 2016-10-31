@@ -11,8 +11,8 @@ namespace StreetFoodTracker.Features.StreetFoodLocationDetail
 			
 		}
 
-		StreetFoodLocation _location;
-		public StreetFoodLocation Location {
+		Place _location;
+		public Place Location {
 			get {
 				return _location;
 			}

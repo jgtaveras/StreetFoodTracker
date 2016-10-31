@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StreetFoodTracker.Data.Models
 {
-	public class StreetFoodLocation
+	public class Place
 	{
 		public int Id {
 			get;
@@ -11,11 +11,6 @@ namespace StreetFoodTracker.Data.Models
 		}
 
 		public string Name {
-			get;
-			set;
-		}
-
-		public string Location {
 			get;
 			set;
 		}
@@ -30,22 +25,21 @@ namespace StreetFoodTracker.Data.Models
 			set;
 		}
 
-		public bool IsOpen {
+
+		public List<Location> Locations {
 			get;
 			set;
 		}
 
-		public double Latitude {
+		public bool IsPremiun {
 			get;
 			set;
 		}
 
-		public double Longitude {
+		public string InstagramHandler {
 			get;
 			set;
 		}
-
-
 
 	}
 }

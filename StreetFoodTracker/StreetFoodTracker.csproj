@@ -74,7 +74,10 @@
     <Compile Include="Pages\StreetFoodLocationDetail\StreetFoodLocationDetailScreen.xaml.cs">
       <DependentUpon>StreetFoodLocationDetailScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Models\StreetFoodLocation.cs" />
+    <Compile Include="Data\Models\Place.cs" />
+    <Compile Include="Data\Models\Location.cs" />
+    <Compile Include="Data\Repositories\FakePlaceRepository.cs" />
+    <Compile Include="Data\Repositories\Iterfaces\IPlaceRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -170,6 +173,8 @@
     <Folder Include="Pages\StreetFoodLocationDetail\" />
     <Folder Include="Data\" />
     <Folder Include="Data\Models\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Data\Repositories\Iterfaces\" />
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.3.3.152-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.152-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

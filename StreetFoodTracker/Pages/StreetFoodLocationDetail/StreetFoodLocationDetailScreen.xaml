@@ -9,24 +9,19 @@
 		Title="{Binding Title}"
 		BackgroundColor="White">
 	<ScrollView>
-		<AbsoluteLayout>
+   		<StackLayout>
 			<ffimageloading:CachedImage x:Name="locationCover" 
+					HeightRequest="240"
 					Aspect="AspectFill" 
 					Source="{Binding Location.CoverImageURL}" 
 					LoadingPlaceholder="loading_image.png"
-					ErrorPlaceholder="image_not_found.png"
-					AbsoluteLayout.LayoutFlags="All" 
-					AbsoluteLayout.LayoutBounds="0, 0, 1, 0.25">  
-			</ffimageloading:CachedImage>
+					ErrorPlaceholder="image_not_found.png"/>
 
 			<StackLayout 
 				BackgroundColor="Silver"
-				AbsoluteLayout.LayoutBounds="0, 0.20, 1, 0.20"
-				AbsoluteLayout.LayoutFlags="All"
-				Margin="5, 15, 5, 0">
+				Margin="5, 2, 5, 2">
 
 				<StackLayout HorizontalOptions="FillAndExpand"
-							BackgroundColor="Silver"
 							 Orientation="Horizontal">
 					<Label 
 						Text="{Binding Location.Name}" 
@@ -55,13 +50,12 @@
 
 			
 			<maps:Map 
-					AbsoluteLayout.LayoutBounds="0, 0.65, 1, 0.15"
-					AbsoluteLayout.LayoutFlags="All"
 					x:Name="LocationMap"
 					HasZoomEnabled="false"
 					HasScrollEnabled="false"
 			        IsShowingUser="true"
-			        MapType="Street"/>
+			        MapType="Street"
+					HeightRequest="170"/>
 
 
 			<Label Text="Menu" 
@@ -69,10 +63,8 @@
 					FontSize="24"
 					TextColor="Black"
 					BackgroundColor="Fuchsia"
-					FontAttributes="Bold"
-					AbsoluteLayout.LayoutBounds="0.5, 0.75, 1, 0.05"
-					AbsoluteLayout.LayoutFlags="All"/>
+					FontAttributes="Bold"/>
 
-		</AbsoluteLayout>
+		</StackLayout>
 	</ScrollView>
 </ContentPage>

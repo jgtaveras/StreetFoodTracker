@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using GFramework.Core;
 using GFramework.Services.Navigation.MVFirst;
+using StreetFoodTracker.Data.Repositories;
 using StreetFoodTracker.Features.AppInfo;
 using StreetFoodTracker.Features.StreetFoodLocationDetail;
 using Xamarin.Forms;
@@ -15,114 +16,50 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 	public class StreetFoodLocationsViewModel : ViewModelBase
 	{
 		readonly INavigationService _navigationService;
+		readonly IPlaceRepository _placesRepository;
 
-		public StreetFoodLocationsViewModel (INavigationService navigationService)
+		public StreetFoodLocationsViewModel (INavigationService navigationService, IPlaceRepository placesRepository)
 		{
-			_navigationService = navigationService;
 			Title = "Locations";
-			GetLatestLocations = new Command (async () => await OnGetLatestLocations());
+
+			_placesRepository = placesRepository;
+			_navigationService = navigationService;
+			GetLatestLocations = new Command (async () => await OnGetLatestLocations ());
 			NavigateToLocationDetail = new Command<StreetFoodLocationItemViewModel> (OnNavigateToLocationDetail);
-			GenerateTempData ();
+
+		//	if (GetLatestLocations.CanExecute (null)) {
+		//		GetLatestLocations.Execute (null);
+		//	}
 		}
 
 		ObservableCollection<StreetFoodLocationItemViewModel> _locations;
-		public ObservableCollection<StreetFoodLocationItemViewModel> Locations {
+		public ObservableCollection<StreetFoodLocationItemViewModel> LocationsList {
 			get { return _locations; }
 
 			set { SetProperty (ref _locations, value); }
 		}
 
-		public ICommand GetLatestLocations { get; set;}
+		public ICommand GetLatestLocations { get; set; }
 
 		public ICommand NavigateToLocationDetail { get; set; }
-
-		void GenerateTempData ()
-		{
-
-			Locations = new ObservableCollection<StreetFoodLocationItemViewModel> ();
-			Locations.Add (new StreetFoodLocationItemViewModel { 
-				Name = "Wicho a very long name this is" ,
-				CoverImageURL="http://loremflickr.com/640/340"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "El Chapo",
-				CoverImageURL = "http://loremflickr.com/640/341"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Foodtruck",
-				CoverImageURL = "http://loremflickr.com/640/342"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Los Jefes",
-				CoverImageURL = "http://loremflickr.com/640/343"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Oveja Negra",
-				CoverImageURL = "http://loremflickr.com/640/344"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "El Chapo",
-				CoverImageURL = "http://loremflickr.com/640/345"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Foodtruck",
-				CoverImageURL = "http://loremflickr.com/640/346"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Los Jefes",
-				CoverImageURL = "http://loremflickr.com/640/347"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Oveja Negra",
-				CoverImageURL = "http://loremflickr.com/641/340"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "El Chapo",
-				CoverImageURL = "http://loremflickr.com/641/341"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Foodtruck",
-				CoverImageURL = "http://loremflickr.com/641/342"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Los Jefes",
-				CoverImageURL = "http://loremflickr.com/641/343"
-			});
-
-			Locations.Add (new StreetFoodLocationItemViewModel {
-				Name = "Oveja Negra",
-				CoverImageURL = "http://loremflickr.com/641/344"
-			});
-		}
 
 		async void OnNavigateToLocationDetail (StreetFoodLocationItemViewModel itemSelected)
 		{
 			if (itemSelected != null) {
-				var locationVmSelected = Locations.FirstOrDefault (p => p.Name == itemSelected.Name);
+				var locationVmSelected = LocationsList.FirstOrDefault (p => p.Name == itemSelected.Name);
 
-					var location = new Data.Models.StreetFoodLocation {
-						Id = 1,
-						Name = locationVmSelected.Name,
-						CoverImageURL = locationVmSelected.CoverImageURL
-					};
+				var location = new Data.Models.Place {
+					Id = 1,
+					Name = locationVmSelected.Name,
+					CoverImageURL = locationVmSelected.CoverImageURL
+				};
 
-					await _navigationService
-						.PushAsync<StreetFoodLocationDetailViewModel> (vm => {
-							vm.Title = location.Name;
-							vm.Location = location;
-						});
-				}
+				await _navigationService
+					.PushAsync<StreetFoodLocationDetailViewModel> (vm => {
+						vm.Title = location.Name;
+						vm.Location = location;
+					});
+			}
 
 		}
 
@@ -130,8 +67,22 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 		{
 			IsBusy = true;
 
-			await Task.Delay (4000);
+			var places = await _placesRepository.GetAll ();
 
+			var locations = from p in places
+							from l in p.Locations
+							select new StreetFoodLocationItemViewModel {
+								LocationId = l.Id,
+								Name = p.Name
+
+							};
+
+			LocationsList.Clear ();
+			foreach (var item in locations) {
+				LocationsList.Add (item);
+			}
+
+			//TODO: Catch no data found exception
 			IsBusy = false;
 		}
 	}

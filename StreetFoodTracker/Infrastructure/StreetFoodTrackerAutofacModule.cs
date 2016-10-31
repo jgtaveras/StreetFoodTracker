@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using StreetFoodTracker.Data.Repositories;
 using StreetFoodTracker.Features.AppInfo;
 using StreetFoodTracker.Features.FavoriteLocations;
 using StreetFoodTracker.Features.MainPage;
@@ -16,6 +17,7 @@ namespace StreetFoodTracker.Infrastructure
 		{
 			LoadViews (builder);
 			LoadViewModels (builder);
+			LoadRepositories (builder);
 		}
 
 		void LoadViews (ContainerBuilder builder)
@@ -38,6 +40,11 @@ namespace StreetFoodTracker.Infrastructure
 			builder.RegisterType<StreetFoodLocationItemViewModel> ();
 			builder.RegisterType<AboutViewModel> ().SingleInstance ();
 			builder.RegisterType<StreetFoodLocationDetailViewModel> ();
+		}
+
+		void LoadRepositories (ContainerBuilder builder) 
+		{
+			builder.RegisterType<FakePlaceRepository> ().As<IPlaceRepository> ().SingleInstance ();
 		}
 	}
 }
