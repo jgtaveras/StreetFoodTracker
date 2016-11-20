@@ -26,10 +26,8 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 			_navigationService = navigationService;
 			GetLatestLocations = new Command (async () => await OnGetLatestLocations ());
 			NavigateToLocationDetail = new Command<StreetFoodLocationItemViewModel> (OnNavigateToLocationDetail);
+			LocationsList = new ObservableCollection<StreetFoodLocationItemViewModel> ();
 
-		//	if (GetLatestLocations.CanExecute (null)) {
-		//		GetLatestLocations.Execute (null);
-		//	}
 		}
 
 		ObservableCollection<StreetFoodLocationItemViewModel> _locations;
@@ -73,8 +71,8 @@ namespace StreetFoodTracker.Features.StreetFoodLocations
 							from l in p.Locations
 							select new StreetFoodLocationItemViewModel {
 								LocationId = l.Id,
-								Name = p.Name
-
+								Name = p.Name,
+								CoverImageURL = p.CoverImageURL
 							};
 
 			LocationsList.Clear ();

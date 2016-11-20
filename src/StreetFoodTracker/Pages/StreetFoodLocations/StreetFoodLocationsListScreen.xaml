@@ -13,6 +13,9 @@
 			<c:SelectedItemListViewCommandArgsConverter x:Key="SelectedItemConverter" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Command="{Binding GetLatestLocations}" Text="F"/>
+	</ContentPage.ToolbarItems>
 	<ListView 
 			x:Name="locationsListView"
 			RowHeight="200"

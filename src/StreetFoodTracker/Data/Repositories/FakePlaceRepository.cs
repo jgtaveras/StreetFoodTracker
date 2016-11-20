@@ -8,11 +8,14 @@ namespace StreetFoodTracker.Data.Repositories
 	public class FakePlaceRepository : IPlaceRepository
 	{
 
-		public async Task<List<Place>> GetAll ()
+		public Task<List<Place>> GetAll ()
 		{
-			await Task.Delay (3000);
+			
 
 			var result = Task.Run (() => {
+
+				Task.Delay (3000);
+
 				var locations = new List<Place> ();
 
 				locations.Add (PlaceFactory.Create ("Wicho a very long name this is"));
@@ -35,7 +38,7 @@ namespace StreetFoodTracker.Data.Repositories
 
 			});
 
-			return await result;
+			return result;
 		}
 
 
@@ -57,7 +60,7 @@ namespace StreetFoodTracker.Data.Repositories
 
 				Name = locationName,
 				PinImageUrl = "",
-				CoverImageURL = $"http://loremflickr.com/640/{trailingImg}",
+				CoverImageURL = $"http://loremflickr.com/640/3{trailingImg}",
 				InstagramHandler = "",
 				IsPremiun = true,
 				Locations = new List<Location> {
